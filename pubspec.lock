@@ -226,7 +226,7 @@ packages:
     source: hosted
     version: "5.8.2"
   firebase_core:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: firebase_core
       sha256: "95580fa07c8ca3072a2bb1fecd792616a33f8683477d25b7d29d3a6a399e6ece"
@@ -712,12 +712,11 @@ packages:
   soar_quest:
     dependency: "direct main"
     description:
-      path: "."
-      ref: "2af86f5"
-      resolved-ref: "2af86f56df7b074cb3c65f21a2f12bfe63b95163"
-      url: "https://github.com/ElBatanony/soar_quest.git"
-    source: git
-    version: "0.8.0"
+      name: soar_quest
+      sha256: "77720a221133576aaea61bfd793f9e037dd8e9bf7c7eec703441fa288fe3f71e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   source_span:
     dependency: transitive
     description:
