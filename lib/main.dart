@@ -19,7 +19,7 @@ void main() async {
   await SQApp.init('Enablisty Job Listings');
   await UserSettings.setSettings(
       [SQBoolField('Admin Mode')..defaultValue = true],
-      restartLink: 'https://t.me/SoarQuestEnablistybot/job_listings');
+      restartLink: 'https://t.me/TevaLearnBot/LMS');
 
   categories = MiniAppCollection(id: 'Category', fields: [
     SQStringField('Title'),
