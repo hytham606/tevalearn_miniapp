@@ -66,8 +66,6 @@ TevaLearn aims to revolutionize the way content creators share their courses on 
 - Add, edit, and manage courses.
 - Add, edit, and manage lessons.
 
-![Admin User Flow](https://i.ibb.co/qyngM9r/Teva-Learn-Courses-Telegram-Mini-App-Admin.gif)
-
 
 ## 💡 Motivation
 
