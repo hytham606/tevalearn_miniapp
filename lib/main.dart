@@ -1,7 +1,9 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:soar_quest/firebase.dart';
 
-import 'backups.dart';
 import 'course_select_screen.dart';
+import 'firebase_options.dart';
 import 'lms_search_field.dart';
 import 'package:soar_quest/soar_quest.dart';
 
@@ -16,7 +18,17 @@ late MiniAppCollection lessons;
 bool isAdmin() => UserSettings.getSetting<bool>('Admin Mode')!;
 
 void main() async {
-  await SQApp.init('Enablisty Job Listings');
+  await SQApp.init('TevaLearn Courses');
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  await SQFirebaseAuth.init(
+      generateTokenUrl:
+          'https://generatecustomtokentevalearn-jydj7nsb5a-uc.a.run.app',
+      userDocFields: [
+        SQBoolField('Test Bool Field'),
+      ]);
+
   await UserSettings.setSettings(
       [SQBoolField('Admin Mode')..defaultValue = true],
       restartLink: 'https://t.me/TevaLearnBot/LMS');
@@ -75,23 +87,29 @@ void main() async {
   // await loadCollectionsWithInitData();
   await testAdd();
 
+  final favsFeature = FavouritesFeature(collection: courses);
+  favsFeature.favouritesCollection.onDocSaveCallback = ((doc) {
+    SQTelegramBot.sendMessage("You favourited the ${doc.label} course");
+  });
+
   MiniApp.expand();
-  SQApp.run([
-    LMSTabsScreen('Test Tabs', screens: [
-      CourseSelectScreen(
-          title: 'Explore',
-          itemsCollection: courses,
-          categoryField: courses.getField<SQRefField>('Category')!)
-        ..icon = Icons.explore
-        ..childAspectRatio = 0.6,
-      CardsScreen(collection: courses, title: 'Search')..icon = Icons.search,
-      LMSMyCoursesScreen(
-          title: 'My Courses',
-          favouritesFeature: FavouritesFeature(collection: courses))
-        ..icon = Icons.person,
-      CollectionScreen(collection: lessons)..show = (context) => isAdmin(),
-      CardsScreen(collection: categories)..show = (context) => isAdmin(),
-    ])
-      ..appbarEnabled = true
-  ], themeData: MiniApp.themeParams.toMaterialThemeData());
+  SQApp.run(
+    [
+      LMSTabsScreen('Test Tabs', screens: [
+        CourseSelectScreen(
+            title: 'Explore',
+            itemsCollection: courses,
+            categoryField: courses.getField<SQRefField>('Category')!)
+          ..icon = Icons.explore
+          ..childAspectRatio = 0.6,
+        CardsScreen(collection: courses, title: 'Search')..icon = Icons.search,
+        LMSMyCoursesScreen(title: 'My Courses', favouritesFeature: favsFeature)
+          ..icon = Icons.person,
+        CardsScreen(collection: categories)..show = (context) => isAdmin(),
+        CollectionScreen(collection: courses)..show = (context) => isAdmin(),
+        CollectionScreen(collection: lessons)..show = (context) => isAdmin(),
+      ])
+        ..appbarEnabled = true
+    ],
+  );
 }
