@@ -7,12 +7,10 @@ environment:
   sdk: '>=3.1.3 <4.0.0'
 
 dependencies:
+  firebase_core: ^2.17.0
   flutter:
     sdk: flutter
-  soar_quest:
-    git:
-      url: https://github.com/ElBatanony/soar_quest.git
-      ref: 2af86f5
+  soar_quest: ^1.0.0
 
 dev_dependencies:
   flutter_test:
