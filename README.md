@@ -27,7 +27,7 @@ Welcome to TevaLearn, an inclusive Learning Management System (LMS) designed as 
 
 ### App Demo
 
-[![TevaLearn App Demo](http://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](http://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+[![TevaLearn App Demo](https://i9.ytimg.com/vi/V6EdwwWjEsI/mqdefault.jpg?v=6525a37c&sqp=CMDalqkG&rs=AOn4CLCs4ABogqbC4yNBPPJvpGqXe9PNMg)](https://www.youtube.com/watch?v=V6EdwwWjEsI)
 
 ### Telegram Mini App
 
