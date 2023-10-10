@@ -4,21 +4,21 @@ import 'main.dart';
 
 final staticCategories = [
   {
-    'id': '4cd75100-ecde-1d26-9997-6db5990387bf',
+    'id': 'graphic',
     'Title': 'Graphic Design',
     'Description': 'description',
     'Image':
         'https://ouch-cdn2.icons8.com/oa5VWbZo4vRSCeBkK3iAuG64ryU-8IffsVR353aV24A/rs:fit:368:368/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvMzMv/MGRhOGVmNzctNDk2/MC00Y2ZhLTk2ZmIt/NjUxMzYyMTdlNjE3/LnBuZw.png'
   },
   {
-    'id': 'ce746080-f3fb-1d26-9997-6db5990387bf',
+    'id': 'prog',
     'Title': 'Programming',
     'Description': 'description',
     'Image':
         'https://ouch-cdn2.icons8.com/qHCXPMf6QLQBWyk4w9p5TiuWdochpyGBJYraZUxQck0/rs:fit:368:368/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvODUz/Lzk4MDcxYzdjLTI3/MjEtNDAxZC04MjAz/LTU2ZWFjNTNjMDdl/Ny5wbmc.png'
   },
   {
-    'id': '9a259200-f445-1d26-9997-6db5990387bf',
+    'id': 'marketing',
     'Title': 'Marketing',
     'Description': 'description',
     'Image':
@@ -39,7 +39,7 @@ final staticCourses = [
       "Promoted": false,
       "Price": "Free",
       "Category": {
-        "docId": "4cd75100-ecde-1d26-9997-6db5990387bf",
+        "docId": "graphic",
         "label": "Graphic Design",
         "collectionPath": "Example Apps/Enablisty Job Listings/Category"
       }
@@ -57,7 +57,7 @@ final staticCourses = [
       "Promoted": null,
       "Price": "12",
       "Category": {
-        "docId": "4cd75100-ecde-1d26-9997-6db5990387bf",
+        "docId": "graphic",
         "label": "Graphic Design",
         "collectionPath": "Example Apps/Enablisty Job Listings/Category"
       }
@@ -75,7 +75,7 @@ final staticCourses = [
       "Promoted": false,
       "Price": "Free",
       "Category": {
-        "docId": "ce746080-f3fb-1d26-9997-6db5990387bf",
+        "docId": "prog",
         "label": "Programming",
         "collectionPath": "Example Apps/Enablisty Job Listings/Category"
       }
@@ -93,7 +93,7 @@ final staticCourses = [
       "Promoted": false,
       "Price": "Free",
       "Category": {
-        "docId": "9a259200-f445-1d26-9997-6db5990387bf",
+        "docId": "marketing",
         "label": "Marketing",
         "collectionPath": "Example Apps/Enablisty Job Listings/Category"
       }
